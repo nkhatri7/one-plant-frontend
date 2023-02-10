@@ -1,5 +1,7 @@
 .header {
     width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     padding: 40px 35px 20px 35px;
@@ -16,6 +18,14 @@
                 background: url('../../assets/book-icon.png') no-repeat center center;
                 background-size: contain;
                 cursor: pointer;
+                @media screen and (min-width: 768px) {
+                    height: calc(38px * 1.2);
+                    width: calc(29px * 1.2);
+                }
+                @media screen and (min-width: 1200px) {
+                    height: 65px;
+                    width: 50px;
+                }
             }
         }
         &--logo {
@@ -23,9 +33,28 @@
             margin-top: 50px;
             > .header-logo-link {
                 text-decoration: none;
+                z-index: 2;
                 > .logo {
                     width: 152px;
+                    @media screen and (min-width: 768px) {
+                        width: calc(152px * 1.2);
+                    }
+                    @media screen and (min-width: 1200px) {
+                        width: 216px;
+                    }
                 }
+            }
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        flex-direction: column-reverse;
+        padding: 25px 90px 20px 90px;
+        > .header-row {
+            &--action-btns {
+                margin-top: -40px;
+            }
+            &--logo {
+                margin-top: 0;
             }
         }
     }

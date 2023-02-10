@@ -10,8 +10,26 @@
     font-size: 8px;
     padding: 0 5px 0 7px;
     cursor: pointer;
-    > .connect-wallet-btn-icon {
+    &-icon {
         max-width: 33px;
         margin-right: 7px;
+    }
+    @media screen and (min-width: 768px) {
+        width: calc(171px * 1.2);
+        height: calc(38px * 1.2);
+        padding: 0 10px;
+        &-icon {
+            max-width: calc(33px * 1.2);
+            margin-right: 15px;
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        width: 255px;
+        height: 49px;
+        padding: 0 20px;
+        font-size: 10px;
+        &-icon {
+            max-width: 47px;
+        }
     }
 }
