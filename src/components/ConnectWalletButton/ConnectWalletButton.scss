@@ -1,0 +1,17 @@
+.connect-wallet-btn {
+    display: flex;
+    align-items: center;
+    width: 171px;
+    height: 38px;
+    background-color: #000000;
+    border: 1px solid #D3BB70;
+    color: #FFFFFF;
+    font-family: 'Press Start 2P';
+    font-size: 8px;
+    padding: 0 5px 0 7px;
+    cursor: pointer;
+    > .connect-wallet-btn-icon {
+        max-width: 33px;
+        margin-right: 7px;
+    }
+}
