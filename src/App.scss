@@ -2,9 +2,12 @@
   width: 100vw;
   min-height: 100vh;
   background-image: url('./assets/mobile-bg.png');
-  background-size: 100vw 100vh;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
+  @media screen and (min-width: 768px) {
+    background-size: 100vw 100vh;
+  }
   @media screen and (orientation: landscape) {
     background-image: url('./assets/desktop-bg.png');
   }

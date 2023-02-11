@@ -1,0 +1,13 @@
+.plant-container {
+    margin-top: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    > .plant {
+        width: 35%;
+        @media screen and (min-width: 1200px) {
+            width: 18%;
+        }
+    }
+}
