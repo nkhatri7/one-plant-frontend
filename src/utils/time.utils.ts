@@ -21,20 +21,24 @@ const getTimeUnits = (totalSeconds: number): TimeUnits => {
 };
 
 /**
- * Formats the given total seconds to show the time in the format of
- * hours:minutes:seconds or minutes:seconds.
- * @param totalSeconds The total seconds from a timer.
- * @param showHours Whether hours should be shown.
- * @returns A string with the formatted time.
+ * Formats the given time units into a string in the format of `mm:ss`.
+ * @param minutes The minutes in a counter or countdown.
+ * @param seconds The seconds in a counter or countdown.
+ * @returns A string in the format of `mm:ss`.
  */
-const formatTime = (totalSeconds: number, showHours: boolean): string => {
-    const { hours, minutes, seconds } = getTimeUnits(totalSeconds);
-    const timeString = `${formatNumber(minutes)}:${formatNumber(seconds)}`;
-    if (showHours) {
-        return `${formatNumber(hours)}:${timeString}`;
-    } else {
-        return timeString;
-    }
+const formatTimer = (minutes: number, seconds: number): string => {
+    return `${formatNumber(minutes)}:${formatNumber(seconds)}`;
+};
+
+/**
+ * Formats the given time units into a string in the format of `hh:mm:ss`.
+ * @param timeUnits The hours, minutes, and seconds from a counter or countdown.
+ * @returns A string in the format of `hh:mm:ss`.
+ */
+const formatLifespan = (timeUnits: TimeUnits): string => {
+    const { hours, minutes, seconds } = timeUnits;
+    const minutesAndSeconds = formatTimer(minutes, seconds);
+    return `${formatNumber(hours)}:${minutesAndSeconds}`;
 };
 
 /**
@@ -49,4 +53,4 @@ const formatNumber = (num: number): string => {
     return num < 10 ? `0${num}` : `${num}`;
 };
 
-export { getTimeUnits, formatTime };
+export { getTimeUnits, formatTimer, formatLifespan };
