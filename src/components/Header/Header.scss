@@ -46,7 +46,7 @@
             }
         }
     }
-    @media screen and (min-width: 1200px) {
+    @media screen and (orientation: landscape) {
         flex-direction: column-reverse;
         padding: 25px 90px 20px 90px;
         > .header-row {

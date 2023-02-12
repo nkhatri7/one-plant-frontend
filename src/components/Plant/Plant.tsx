@@ -8,25 +8,28 @@ import './Plant.scss';
 
 type PlantProps = {
 	minutesLeft: number,
+	secondsLeft: number,
 };
 
-const Plant = ({ minutesLeft }: PlantProps) => {
+const Plant = ({ minutesLeft, secondsLeft}: PlantProps) => {
+	/**
+	 * Gets the appropriate plant image based on the time that's left.
+	 * @returns The path to the appropriate image.
+	 */
 	const getPlantImage = (): string => {
-		let image;
-		if (minutesLeft > 12) {
-			image = PlantInterval15;
-		} else if (minutesLeft > 9) {
-			image = PlantInterval12;
-		} else if (minutesLeft > 6) {
-			image = PlantInterval9;
-		} else if (minutesLeft > 3) {
-			image = PlantInterval6;
-		} else if (minutesLeft > 0) {
-			image = PlantInterval3;
+		if (minutesLeft === 0 && secondsLeft === 0) {
+			return PlantDead;
+		} else if (minutesLeft < 3) {
+			return PlantInterval3;
+		} else if (minutesLeft < 6) {
+			return PlantInterval6;
+		} else if (minutesLeft < 9) {
+			return PlantInterval9;
+		} else if (minutesLeft < 12) {
+			return PlantInterval12;
 		} else {
-			image = PlantDead;
+			return PlantInterval15;
 		}
-		return image;
 	};
 
 	return (

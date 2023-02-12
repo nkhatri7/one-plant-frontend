@@ -1,0 +1,50 @@
+@keyframes time-opacity {
+    0% { opacity: 1; }
+    30% { opacity: 0; }
+    60% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 5px;
+    &--landscape {
+        display: none;
+    }
+    @media screen and (orientation: landscape) {
+        flex-direction: column-reverse;
+        &--portrait {
+            display: none;
+        }
+        &--landscape {
+            display: flex;
+        }
+    }
+    > .countdown {
+        font-family: '04B 30';
+        font-size: 40px;
+        color: #FFFFFF;
+        &--red {
+            color: var(--red-text);
+            animation: time-opacity 1s infinite;
+        }
+    }
+    > .current-block {
+        color: var(--grey-text);
+        font-size: 8px;
+        line-height: 14px;
+    }
+    @media screen and (min-width: 1200px) {
+        margin-top: -35px;
+        > .countdown {
+            font-size: 64px;
+        }
+        > .current-block {
+            font-size: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}

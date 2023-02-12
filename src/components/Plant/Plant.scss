@@ -1,12 +1,15 @@
 .plant-container {
-    margin-top: 6vh;
+    margin-top: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     > .plant {
         width: 35%;
-        @media screen and (min-width: 1200px) {
+    }
+    @media screen and (orientation: landscape) {
+        margin-top: 1%;
+        > .plant {
             width: 18%;
         }
     }

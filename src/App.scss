@@ -6,13 +6,29 @@
   background-repeat: no-repeat;
   background-position: top center;
   @media screen and (min-width: 768px) {
-    background-size: 100vw 100vh;
+    background-size: contain;
   }
   @media screen and (orientation: landscape) {
     background-image: url('./assets/desktop-bg.png');
+    max-width: 1440px;
+    max-height: 1024px;
+    margin: 0 auto;
   }
 
   .hidden {
     display: none;
+  }
+
+  .water-plant-prompt {
+    font-family: '04B 30';
+    font-size: 12px;
+    color: #60ECFF;
+    margin-top: 13%;
+    text-align: center;
+    text-transform: uppercase;
+    @media screen and (min-width: 1200px) {
+      font-size: 20px;
+      margin-top: 7%;
+    }
   }
 }
