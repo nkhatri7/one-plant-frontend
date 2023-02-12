@@ -1,0 +1,37 @@
+.hint-text {
+    font-size: 10px;
+    color: var(--grey-text);
+    text-align: center;
+    width: 80vw;
+    max-width: 450px;
+    margin: 10px auto 0 auto;
+    line-height: 20px;
+    &--icon {
+        font-size: 15px;
+        color: #FAD55D;
+        margin-right: 5px;
+    }
+    &--highlighted {
+        color: #FFFFFF;
+    }
+    &--landscape {
+        display: none;
+        text-align: left;
+        max-width: 300px;
+        margin: 0;
+    }
+    @media screen and (orientation: landscape) {
+        &--portrait {
+            display: none;
+        }
+        &--landscape {
+            display: block;
+        }
+    }
+    @media screen and (min-width: 768px) {
+        font-size: 12px;
+        &--icon {
+            font-size: 20px;
+        }
+    }
+}

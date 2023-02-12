@@ -19,6 +19,19 @@
     display: none;
   }
 
+  .landscape-hint-and-stats {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .water-plant-prompt {
     font-family: '04B 30';
     font-size: 12px;

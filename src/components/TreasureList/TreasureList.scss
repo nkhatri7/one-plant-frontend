@@ -1,0 +1,35 @@
+.treasure-list-container {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > .treasure-list-heading {
+        font-family: '04B 30';
+        font-size: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        color: white;
+        max-width: 80vw;
+    }
+    > .treasure-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 20px 0;
+    }
+    @media screen and (min-width: 768px) {
+        > .treasure-list-heading {
+            font-size: 24px;
+        }
+        > .treasure-list {
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        margin-top: 40px;
+        > .treasure-list {
+            grid-template-columns: repeat(16, 1fr);
+            margin: 10px 0;
+        }
+    }
+}

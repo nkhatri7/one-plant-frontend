@@ -1,0 +1,31 @@
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin:  10px 0 20px 0;
+    &--landscape {
+        display: none;
+        align-items: flex-end;
+    }
+    .stat {
+        font-size: 8px;
+        line-height: 16px;
+        color: var(--grey-text);
+        &--value {
+            color: #FFFFFF;
+        }
+    }
+    @media screen and (orientation: landscape) {
+        &--portrait {
+            display: none;
+        }
+        &--landscape {
+            display: flex;
+        }
+        .stat {
+            font-size: 12px;
+            line-height: 20px;
+        }
+    }
+}

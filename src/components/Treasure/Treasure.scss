@@ -1,0 +1,15 @@
+.treasure {
+    position: relative;
+    height: 64px;
+    width: 64px;
+    > .bevel-overlay, > .lock-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+    > .bevel-overlay {
+        z-index: 2;
+    }
+}
