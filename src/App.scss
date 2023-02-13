@@ -19,6 +19,10 @@
     display: none;
   }
 
+  button, .mint-btn {
+    cursor: url('./assets/pointer.png'), pointer;
+  }
+
   .landscape-hint-and-stats {
     width: 100%;
     max-width: 1440px;
