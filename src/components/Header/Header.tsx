@@ -1,12 +1,17 @@
+import { MouseEventHandler } from 'react';
 import ConnectWalletButton from '../ConnectWalletButton/ConnectWalletButton';
 import OnePlantLogo from '../../assets/one-plant-logo.png';
 import './Header.scss';
 
-const Header = () => {
+type HeaderProps = {
+	displayNotepad: MouseEventHandler,
+};
+
+const Header = ({ displayNotepad }: HeaderProps) => {
 	return (
 		<header className='header'>
 			<div className="header-row header-row--action-btns">
-				<button className="more-info-btn" aria-label='More info'>
+				<button className="more-info-btn" aria-label='More info' onClick={displayNotepad}>
 					<span className="hidden">More info</span>
 				</button>
 				<ConnectWalletButton />

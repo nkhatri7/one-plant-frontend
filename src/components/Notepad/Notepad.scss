@@ -1,0 +1,71 @@
+.notepad {
+    position: relative;
+    height: calc(90vw * (1344 / 1032));
+    width: 90vw;
+    max-height: calc(500px * (1344 / 1032));
+    max-width: 500px;
+    padding: 7% 5% 3% 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > .notepad-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+        filter: drop-shadow(0px 4px 30px rgba(207, 127, 56, 0.5));
+    }
+    > .notepad-content {
+        position: absolute;
+        height: 80%;
+        left: 16%;
+        right: 6%;
+        padding-right: 30px;
+        overflow-y: scroll;
+        .notepad-section:first-child {
+            margin-bottom: 40px;
+        }
+        .notepad-subsection {
+            margin-bottom: 15px;
+        }
+        .notepad-section-heading {
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        .notepad-subsection-heading {
+            font-size: 10px;
+            line-height: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .notepad-text {
+            font-size: 8px;
+            line-height: 10px;
+        }
+        .notepad-subsection-list {
+            padding-left: 25px;
+            .notepad-subsection-list-item {
+                margin: 5px 0;
+            }
+        }
+        .notepad-link {
+            text-decoration: none;
+            color: #000000;
+        }
+        @media screen and (min-width: 768px) {
+            .notepad-section-heading {
+                font-size: 20px;
+            }
+            .notepad-subsection-heading {
+                font-size: 12px;
+                line-height: 14px;
+            }
+            .notepad-text {
+                font-size: 10px;
+                line-height: 12px;
+            }
+        }
+    }
+}

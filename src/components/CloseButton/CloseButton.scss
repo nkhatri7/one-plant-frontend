@@ -1,0 +1,16 @@
+.close-btn {
+    position: absolute;
+    z-index: 5;
+    height: 28px;
+    width: 28px;
+    border: none;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: 'Press Start 2P';
+    font-size: 10px;
+    filter: drop-shadow(-2px 2px 0px rgba(0, 0, 0, 0.25));
+    &--notepad {
+        top: 8%;
+        right: 3%;
+    }
+}
