@@ -3,7 +3,7 @@ import useCountdown from './hooks/useCountdown';
 import Header from './components/Header/Header';
 import Plant from './components/Plant/Plant';
 import Timer from './components/Timer/Timer';
-import Mint from './components/Mint/Mint';
+import MintButton from './components/MintButton/MintButton';
 import Hint from './components/Hint/Hint';
 import TreasureList from './components/TreasureList/TreasureList';
 import Stats from './components/Stats/Stats';
@@ -42,7 +42,7 @@ const App = () => {
 			<Plant minutesLeft={minutes} secondsLeft={seconds} />
 			<p className="water-plant-prompt">Water the plant</p>
 			<Timer minutes={minutes} seconds={seconds} isPortrait={true} />
-			<Mint />
+			<MintButton />
 			<Hint isPortrait={true} />
 			<TreasureList />
 			<Stats isPortrait={true} />

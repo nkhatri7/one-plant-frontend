@@ -1,6 +1,6 @@
-import './Mint.scss';
+import './MintButton.scss';
 
-const Mint = () => {
+const MintButton = () => {
     return (
 		<div className="mint-btn-container">
 			<button className="mint-btn" aria-label="Mint">
@@ -10,4 +10,4 @@ const Mint = () => {
     );
 };
 
-export default Mint;
+export default MintButton;
