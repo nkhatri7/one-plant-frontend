@@ -3,15 +3,17 @@
     align-items: center;
     width: 171px;
     height: 38px;
+    background: linear-gradient(#000000, #000000) padding-box, linear-gradient(#FFE898, #CF7F38) border-box;
     background-color: #000000;
-    border: 1px solid #D3BB70;
+    // border: 1px solid #D3BB70;
+    border: 2px solid transparent;
     color: #FFFFFF;
     font-family: 'Press Start 2P';
     font-size: 8px;
     padding: 0 5px 0 7px;
     &-icon {
         max-width: 33px;
-        margin-right: 7px;
+        margin-left: 7px;
     }
     @media screen and (min-width: 768px) {
         width: calc(171px * 1.2);
@@ -19,7 +21,7 @@
         padding: 0 10px;
         &-icon {
             max-width: calc(33px * 1.2);
-            margin-right: 15px;
+            margin-left: 24px;
         }
     }
     @media screen and (min-width: 1200px) {

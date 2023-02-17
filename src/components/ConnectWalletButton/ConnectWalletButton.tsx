@@ -7,8 +7,8 @@ const ConnectWalletButton = () => {
 		<ConnectKitButton.Custom>
 			{({ isConnected, show, truncatedAddress, ensName }) => (
 				<button className="connect-wallet-btn" onClick={show}>
-					<img src={ConnectWalletIcon} alt="" className="connect-wallet-btn-icon" />
 					{isConnected ? ensName ?? truncatedAddress : "CONNECT WALLET"}
+					<img src={ConnectWalletIcon} alt="" className="connect-wallet-btn-icon" />
 				</button>
 			)}
 		</ConnectKitButton.Custom>

@@ -17,6 +17,7 @@
                 border: none;
                 background: url('../../assets/book-icon.png') no-repeat center center;
                 background-size: contain;
+                filter: drop-shadow(0px 0px 30px rgba(207, 127, 56, 0.5));
                 @media screen and (min-width: 768px) {
                     height: calc(38px * 1.2);
                     width: calc(29px * 1.2);

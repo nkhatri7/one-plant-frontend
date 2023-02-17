@@ -1,13 +1,20 @@
 .notepad {
-    position: relative;
     height: calc(90vw * (1344 / 1032));
     width: 90vw;
     max-height: calc(500px * (1344 / 1032));
     max-width: 500px;
     padding: 7% 5% 3% 8%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    ::-webkit-scrollbar {
+        width: 13px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #322D28;
+        border: none;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #595959;
+        border: 1px solid #000000;
+    }
     > .notepad-bg {
         position: absolute;
         top: 0;
@@ -20,9 +27,13 @@
         position: absolute;
         height: 80%;
         left: 16%;
-        right: 6%;
-        padding-right: 30px;
+        right: 3%;
+        padding-right: 15px;
+        margin-top: 40px;
         overflow-y: scroll;
+        @media screen and (orientation: landscape) {
+            margin-top: 0px;
+        }
         .notepad-section:first-child {
             margin-bottom: 40px;
         }
@@ -44,15 +55,8 @@
             font-size: 8px;
             line-height: 10px;
         }
-        .notepad-subsection-list {
-            padding-left: 25px;
-            .notepad-subsection-list-item {
-                margin: 5px 0;
-            }
-        }
-        .notepad-link {
-            text-decoration: none;
-            color: #000000;
+        .notepad-subsection-list-item {
+            margin: 10px 0;
         }
         @media screen and (min-width: 768px) {
             .notepad-section-heading {

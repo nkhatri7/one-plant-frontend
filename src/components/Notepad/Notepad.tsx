@@ -10,7 +10,7 @@ type NotepadProps = {
 const Notepad = ({ closeNotepad }: NotepadProps) => {
 	return (
 		<div className="modal-backdrop">
-			<article className="notepad">
+			<article className="modal notepad">
 				<img src={NotepadBg} alt="Notepad" className="notepad-bg" />
 				<CloseButton modal='notepad' onClick={closeNotepad} />
 				<div className="notepad-content">
@@ -85,9 +85,10 @@ const Notepad = ({ closeNotepad }: NotepadProps) => {
 						<section className="notepad-subsection">
 							<p className="notepad-subsection-heading">Who made this?</p>
 							<ul className="notepad-subsection-list">
-								<li className="notepad-subsection-list-item">
+								<li className="notepad-subsection-list-item notepad-text">
+									Founder&nbsp;
 									<a 
-											href="/" 
+											href="https://twitter.com/themavrek" 
 											target="_blank" 
 											rel="noreferrer noopener" 
 											className="notepad-link notepad-text"
@@ -95,27 +96,19 @@ const Notepad = ({ closeNotepad }: NotepadProps) => {
 										@themavrek
 									</a>
 								</li>
-								<li className="notepad-subsection-list-item">
+								<li className="notepad-subsection-list-item notepad-text">
+									Artwork&nbsp;
 									<a 
-											href="/" 
+											href="https://twitter.com/ninaspixels" 
 											target="_blank" 
 											rel="noreferrer noopener" 
 											className="notepad-link notepad-text"
 									>
-										@nina
+										@ninaspixels
 									</a>
 								</li>
-								<li className="notepad-subsection-list-item">
-									<a 
-											href="/" 
-											target="_blank" 
-											rel="noreferrer noopener" 
-											className="notepad-link notepad-text"
-									>
-										@mohak
-									</a>
-								</li>
-								<li className="notepad-subsection-list-item">
+								<li className="notepad-subsection-list-item notepad-text">
+									Frontend&nbsp;
 									<a 
 											href="https://neilkhatri.com/" 
 											target="_blank" 
@@ -123,6 +116,17 @@ const Notepad = ({ closeNotepad }: NotepadProps) => {
 											className="notepad-link notepad-text"
 									>
 										@neil
+									</a>
+								</li>
+								<li className="notepad-subsection-list-item notepad-text">
+									Solidity&nbsp;
+									<a 
+											href="https://twitter.com/spartablock" 
+											target="_blank" 
+											rel="noreferrer noopener" 
+											className="notepad-link notepad-text"
+									>
+										@spartablock
 									</a>
 								</li>
 							</ul>

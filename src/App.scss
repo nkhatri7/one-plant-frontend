@@ -1,3 +1,8 @@
+@keyframes modal-smooth-open {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .app {
   width: 100vw;
   min-height: 100vh;
@@ -19,7 +24,7 @@
     display: none;
   }
 
-  button, .mint-btn {
+  button, .mint-btn, .notepad-link {
     cursor: url('./assets/pointer.png'), pointer;
   }
 
@@ -35,6 +40,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    .modal {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: modal-smooth-open 0.5s ease;
+    }
   }
 
   .landscape-hint-and-stats {
@@ -57,6 +69,7 @@
     margin-top: 13%;
     text-align: center;
     text-transform: uppercase;
+    text-shadow: 4px 4px 0px #000000;
     @media screen and (min-width: 1200px) {
       font-size: 20px;
       margin-top: 7%;
