@@ -1,0 +1,50 @@
+.mint-modal {
+    height: calc(90vw * (900 / 720));
+    width: 90vw;
+    max-height: calc(500px * (900 / 720));
+    max-width: 500px;
+    > .mint-modal-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+    }
+    > .mint-modal-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        height: 70%;
+        left: 21%;
+        right: 14.5%;
+        padding-right: 6.5%;
+        margin-top: 10px;
+        overflow-y: auto;
+        text-align: center;
+        @media screen and (min-width: 390px) {
+            right: 21%;
+            padding-right: 0;
+        }
+        @media screen and (min-width: 768px) {
+            left: 23%;
+            right: 23%;
+        }
+        .mint-modal-title, .mint-modal-heading {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .mint-modal-title {
+            margin-bottom: 10px;
+            @media screen and (min-width: 768px) {
+                font-size: 14px;
+            }
+        }
+        .mint-modal-heading {
+            margin: 15px 0 5px 0;
+            @media screen and (min-width: 400px) {
+                margin: 20px 0 5px 0;
+            }
+        }
+    }
+}

@@ -13,8 +13,15 @@
         top: 8%;
         right: 3%;
     }
+    &--mint {
+        top: 3.2%;
+        right: 9%;
+    }
     @media screen and (min-width: 1200px) {
         height: 32px;
         width: 32px;
+        &--mint {
+            top: 4%;
+        }
     }
 }

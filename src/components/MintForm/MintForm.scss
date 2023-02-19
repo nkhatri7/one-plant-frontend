@@ -1,0 +1,63 @@
+.mint-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    > .mint-form-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 3px 0;
+        > .mint-option {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 28px;
+            width: 50%;
+            max-width: 120px;
+            background-color: #D9D9D9;
+            box-sizing: border-box;
+            &--selected {
+                border: 2px solid #5653FF;
+            }
+            &:not(:last-child) {
+                margin-right: 8px;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+            &:not(.mint-option--selected):hover {
+                border: 2px solid rgba(86, 83, 255, 0.5);
+            }
+            .mint-value, .mint-input, .mint-input-eth {
+                font-size: 8px;
+            }
+            > .mint-input {
+                font-family: 'Press Start 2P';
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid #000000;
+                width: 32px;
+                &:focus {
+                    outline: none !important;
+                }
+            }
+            > .mint-input-eth {
+                margin-left: 5px;
+            }
+            @media screen and (min-width: 768px) {
+                height: 40px;
+                .mint-value, .mint-input, .mint-input-eth {
+                    font-size: 10px;
+                }
+                > .mint-input-eth {
+                    margin-left: 10px;
+                }
+                > .mint-input {
+                    width: 56px;
+                }
+            }
+        }
+    }
+}

@@ -24,7 +24,14 @@
     display: none;
   }
 
-  button, .mint-btn, .notepad-link {
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  button, .mint-btn, .notepad-link, a {
     cursor: url('./assets/pointer.png'), pointer;
   }
 
@@ -45,7 +52,30 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: modal-smooth-open 0.5s ease;
+      animation: modal-smooth-open 0.5s ease; 
+      // CUSTOM SCROLLBAR
+      ::-webkit-scrollbar {
+        width: 13px;
+      }
+      ::-webkit-scrollbar-track {
+          background: #322D28;
+          border: none;
+      }
+      ::-webkit-scrollbar-thumb {
+          background: #595959;
+          border: 1px solid #000000;
+      }
+      .modal-text {
+        font-size: 8px;
+        line-height: 10px;
+        &--red {
+          color: var(--red-text);
+        }
+        @media screen and (min-width: 768px) {
+          font-size: 10px;
+          line-height: 12px;
+        }
+      }
     }
   }
 
@@ -73,6 +103,36 @@
     @media screen and (min-width: 1200px) {
       font-size: 20px;
       margin-top: 7%;
+    }
+  }
+
+  .mint-btn-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    > .mint-btn {
+        height: 67px;
+        width: 105px;
+        border: none;
+        background: url('./assets/mint-unpressed.png') no-repeat center center;
+        background-size: contain;
+        margin: 0 auto;
+        &--modal {
+          height: 56px;
+          width: 88px;
+          color: transparent;
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        margin-top: 15px;
+        > .mint-btn {
+            height: 92px;
+            width: 146px;
+            &--modal {
+              height: 69px;
+              width: 109px;
+            }
+        }
     }
   }
 }
