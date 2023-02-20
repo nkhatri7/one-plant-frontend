@@ -12,18 +12,8 @@ const MintForm = ({ closeModal }: MintFormProps) => {
 	const customValueEl = useRef<HTMLDivElement>(null);
 	const mintOptions = [baseValueEl, whitelistValueEl, customValueEl];
 
-	const [selectedOption, setSelectedOption] = useState(baseValueEl.current);
-	const [customValue, setCustomValue] = useState(0);
-
-	/**
-	 * Handles input validation and requests the mint function on the smart
-	 * contract.
-	 * @param e A form submission event.
-	 */
-	const handleMintRequest = (e: FormEvent) => {
-		e.preventDefault();
-		closeModal(e);
-	};
+	const [selectedOption, setSelectedOption] = useState(baseValueEl);
+	const [customPrice, setCustomPrice] = useState(0);
 
 	/**
 	 * Changes the style of the selected option and updates the selected option
@@ -41,7 +31,7 @@ const MintForm = ({ closeModal }: MintFormProps) => {
 			if (option.current === selectedOption) {
 				option.current?.classList.add('mint-option--selected');
 				// Set state for selected option
-				setSelectedOption(option.current);
+				setSelectedOption(option);
 			} else {
 				option.current?.classList.remove('mint-option--selected');
 			}
@@ -49,16 +39,55 @@ const MintForm = ({ closeModal }: MintFormProps) => {
 	};
 
 	/**
-	 * Updates the value of the custom mint value.
+	 * Updates the value of the custom mint price.
 	 * @param e Input change event.
 	 */
-	const handleCustomValueChange = (e: ChangeEvent<HTMLInputElement>) => {
+	const handleCustomPriceChange = (e: ChangeEvent<HTMLInputElement>) => {
 		// Check if input is empty
 		if (e.target.value.length === 0) {
-			setCustomValue(0);
+			setCustomPrice(0);
 		} else {
-			setCustomValue(e.target.valueAsNumber);
+			setCustomPrice(e.target.valueAsNumber);
 		}
+	};
+
+	/**
+	 * Handles input validation and requests the mint function on the smart
+	 * contract.
+	 * @param e A form submission event.
+	 */
+	const handleMintRequest = (e: FormEvent) => {
+		e.preventDefault();
+		// Check if custom pricing option is selected and if the price is more
+		// than the minimum for custom pricing
+		if (selectedOption === customValueEl && !validateCustomPrice()) {
+			return;
+		}
+		const price = getMintPrice();
+		closeModal(e);
+	};
+
+	/**
+	 * Gets the mint price based on the mint pricing option the user has
+	 * selected.
+	 * @returns The selected mint price.
+	 */
+	const getMintPrice = (): number => {
+		if (selectedOption === baseValueEl) {
+			return 0;
+		} else if (selectedOption === whitelistValueEl) {
+			return 0.02;
+		} else {
+			return customPrice;
+		}
+	};
+
+	/**
+	 * Checks whether the custom price is more than the minimum (0.0001).
+	 * @returns `true` if the custom price is valid and `false` if it is not.
+	 */
+	const validateCustomPrice = (): boolean => {
+		return customPrice < 0.001;
 	};
 
 	return (
@@ -82,8 +111,9 @@ const MintForm = ({ closeModal }: MintFormProps) => {
 						name="custom-mint-value" 
 						id="custom-mint-value" 
 						className="mint-input" 
-						value={customValue}
-						onChange={handleCustomValueChange}
+						value={customPrice}
+						step={0.01}
+						onChange={handleCustomPriceChange}
 					/>
 					<span className="mint-input-eth">ETH</span>
 				</div>
