@@ -1,0 +1,32 @@
+.mint-btn-container {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	> .mint-btn {
+		height: 67px;
+		width: 105px;
+		border: none;
+		background: url('../../assets/mint-unpressed.png') no-repeat center center;
+		background-size: contain;
+		margin: 0 auto;
+		&--pressed {
+			background-image: url('../../assets/mint-pressed.png');
+		}
+		&--modal {
+			height: 56px;
+			width: 88px;
+			color: transparent;
+		}
+	}
+	@media screen and (min-width: 1200px) {
+		margin-top: 15px;
+		> .mint-btn {
+			height: 92px;
+			width: 146px;
+			&--modal {
+				height: 69px;
+				width: 109px;
+			}
+		}
+	}
+}

@@ -1,4 +1,5 @@
 import { useState, useRef, ChangeEvent, FormEvent } from 'react';
+import MintButton from '../MintButton/MintButton';
 import './MintForm.scss';
 
 type MintFormProps = {
@@ -88,9 +89,7 @@ const MintForm = ({ closeModal }: MintFormProps) => {
 				</div>
 			</div>
 			<div className="mint-form-row">
-				<div className="mint-btn-container">
-					<input type="submit" value="Mint" className='mint-btn mint-btn--modal' />
-				</div>
+				<MintButton isModal={true} />
 			</div>
 		</form>
 	);

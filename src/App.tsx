@@ -7,6 +7,7 @@ import Timer from './components/Timer/Timer';
 import Hint from './components/Hint/Hint';
 import TreasureList from './components/TreasureList/TreasureList';
 import Stats from './components/Stats/Stats';
+import MintButton from './components/MintButton/MintButton';
 import Notepad from './components/Notepad/Notepad';
 import MintModal from './components/MintModal/MintModal';
 import './App.scss';
@@ -63,11 +64,7 @@ const App = () => {
 			<Timer minutes={minutes} seconds={seconds} isPortrait={true} />
 			<ConnectKitButton.Custom>
 				{({ isConnected, show }) => (
-					<div className="mint-btn-container">
-						<button className="mint-btn" aria-label="Mint" onClick={isConnected ? displayMintModal : show}>
-							<span className="hidden">Mint</span>
-						</button>
-					</div>
+					<MintButton isModal={false} onClick={isConnected ? displayMintModal : show} />
 				)}
 			</ConnectKitButton.Custom>
 			<Hint isPortrait={true} />
