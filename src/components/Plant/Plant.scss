@@ -13,4 +13,11 @@
             width: 18%;
         }
     }
+    @media screen and (min-width: 400px) and (max-width: 767px) {
+        margin-top: 15%;
+    }
+    // PORTRAIT TABLET VIEW
+    @media screen and (orientation: portrait) and (min-width: 768px) {
+        margin-top: 35%;
+    }
 }
