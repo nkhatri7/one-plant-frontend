@@ -60,11 +60,15 @@ const App = () => {
 				<Stats isPortrait={false} />
 			</div>
 			<Plant totalSeconds={totalSeconds} />
-			<p className="water-plant-prompt">Water the plant</p>
+			<p className="water-plant-prompt">{totalSeconds === 0 ? 'Game Over' : 'Water the plant'}</p>
 			<Timer totalSeconds={totalSeconds} isPortrait={true} />
 			<ConnectKitButton.Custom>
 				{({ isConnected, show }) => (
-					<MintButton isModal={false} onClick={isConnected ? displayMintModal : show} />
+					<MintButton 
+						isModal={false} 
+						disabled={totalSeconds === 0} 
+						onClick={isConnected ? displayMintModal : show} 
+					/>
 				)}
 			</ConnectKitButton.Custom>
 			<Hint isPortrait={true} />

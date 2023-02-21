@@ -3,10 +3,11 @@ import './MintButton.scss';
 
 type MintButtonProps = {
 	isModal: boolean,
+	disabled: boolean,
 	onClick?: Function,
 };
 
-const MintButton = ({ isModal, onClick }: MintButtonProps) => {
+const MintButton = ({ isModal, disabled, onClick }: MintButtonProps) => {
 	const mintBtn = useRef<HTMLButtonElement>(null);
 		
 	/**
@@ -38,6 +39,7 @@ const MintButton = ({ isModal, onClick }: MintButtonProps) => {
 					aria-label="Mint" 
 					type={isModal ? 'submit' : 'button'}
 					onClick={handleMintBtnClick} 
+					disabled={disabled}
 					ref={mintBtn}
 			>
 				<span className="hidden">Mint</span>

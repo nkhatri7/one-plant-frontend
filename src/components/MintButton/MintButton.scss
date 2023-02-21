@@ -17,6 +17,10 @@
 			width: 88px;
 			color: transparent;
 		}
+		&:disabled {
+			background-image: url('../../assets/mint-disabled.png');
+			cursor: not-allowed !important;
+		}
 	}
 	@media screen and (min-width: 1200px) {
 		margin-top: 15px;

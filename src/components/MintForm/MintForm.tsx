@@ -119,7 +119,7 @@ const MintForm = ({ closeModal }: MintFormProps) => {
 				</div>
 			</div>
 			<div className="mint-form-row">
-				<MintButton isModal={true} />
+				<MintButton isModal={true} disabled={false} />
 			</div>
 		</form>
 	);
