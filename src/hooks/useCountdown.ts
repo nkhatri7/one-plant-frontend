@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 
 /**
  * Decreases the given maximum value by 1 unit with the given interval time.
- * @param maxValue The maximum value (the value the countdown starts with).
+ * @param initialValue The value the countdown starts with.
  * @param intervalTime The number of seconds between each decrement.
  * @returns The remaining value.
  */
-const useCountdown = (maxValue: number, intervalTime: number): number => {
-    const [value, setValue] = useState(maxValue);
+const useCountdown = (initialValue: number, intervalTime: number): number => {
+    const [value, setValue] = useState(initialValue);
 
     useEffect(() => {
         const interval = setInterval(() => {
