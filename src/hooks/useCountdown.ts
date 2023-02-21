@@ -1,27 +1,25 @@
 import { useState, useEffect } from 'react';
 
-// Max time for plant is 15 minutes (15 x 60 seconds)
-const MAX_TIME_LEFT = 15 * 60;
-
 /**
- * Decreases the time left from the maximum plant life cycle (15 minutes)
- * every second.
- * @returns The total seconds left.
+ * Decreases the given maximum value by 1 unit with the given interval time.
+ * @param maxValue The maximum value (the value the countdown starts with).
+ * @param intervalTime The number of seconds between each decrement.
+ * @returns The remaining value.
  */
-const useCountdown = (): number => {
-    const [timeLeft, setTimeLeft] = useState(MAX_TIME_LEFT);
+const useCountdown = (maxValue: number, intervalTime: number): number => {
+    const [value, setValue] = useState(maxValue);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (timeLeft > 0) {
-                setTimeLeft(prev => prev - 1);
+            if (value > 0) {
+                setValue(prev => prev - 1);
             }
-        }, 1000);
+        }, (intervalTime * 1000));
 
         return () => clearInterval(interval);
-    }, [timeLeft]);
+    }, [value]);
 
-    return timeLeft;
+    return value;
 };
 
 export default useCountdown;

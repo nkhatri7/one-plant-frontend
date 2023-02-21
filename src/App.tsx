@@ -18,7 +18,7 @@ import './App.scss';
 const App = () => {
 	const [isNotepadOpen, setNotepadOpen] = useState(false);
 	const [isMintModalOpen, setMintModalOpen] = useState(false);
-	const totalSeconds = useCountdown();
+	const totalSeconds = useCountdown(15 * 60, 1);
 
 	/**
 	 * Displays the notepad modal.
