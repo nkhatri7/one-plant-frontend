@@ -1,7 +1,8 @@
 @keyframes time-opacity {
     0% { opacity: 1; }
-    30% { opacity: 0; }
-    60% { opacity: 0; }
+    40% { opacity: 0.25; }
+    60% { opacity: 0.25; }
+    61% { opacity: 1; }
     100% { opacity: 1; }
 }
 
