@@ -6,15 +6,7 @@
 .app {
   width: 100vw;
   min-height: 100vh;
-  // background-image: url('./assets/mobile-bg.png');
-  // background-size: contain;
-  // background-repeat: no-repeat;
-  // background-position: top center;
-  // @media screen and (orientation: portrait) and (min-width: 768px) {
-  //   background-size: cover;
-  // }
   @media screen and (orientation: landscape) {
-    // background-image: url('./assets/desktop-bg.png');
     max-width: 1440px;
     max-height: 1024px;
     margin: 0 auto;
@@ -128,7 +120,7 @@
     text-shadow: 4px 4px 0px #000000;
     @media screen and (min-width: 768px) {
       font-size: 24px;
-      margin-top: 7%;
+      margin-top: 10%;
     }
   }
 }

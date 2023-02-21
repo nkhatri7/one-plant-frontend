@@ -11,10 +11,22 @@
         margin-top: 1%;
         > .plant {
             width: 18%;
+            @media screen and (min-width: 1440px) {
+                margin-top: 2%;
+            }
         }
     }
-    @media screen and (min-width: 400px) and (max-width: 767px) {
+    @media screen and (min-width: 400px) and (max-width: 450px) {
         margin-top: 15%;
+    }
+    @media screen and (min-width: 450px) and (max-width: 530px) {
+        margin-top: 20%;
+    }
+    @media screen and (min-width: 530px) and (max-width: 580px) {
+        margin-top: 25%;
+    }
+    @media screen and (min-width: 580px) and (max-width: 768px) {
+        margin-top: 30%;
     }
     // PORTRAIT TABLET VIEW
     @media screen and (orientation: portrait) and (min-width: 768px) {
