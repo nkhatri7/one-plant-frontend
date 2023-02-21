@@ -15,7 +15,7 @@ import './App.scss';
 const App = () => {
 	const [isNotepadOpen, setNotepadOpen] = useState(false);
 	const [isMintModalOpen, setMintModalOpen] = useState(false);
-	const { minutes, seconds } = useCountdown();
+	const totalSeconds = useCountdown();
 
 	/**
 	 * Displays the notepad modal.
@@ -54,14 +54,14 @@ const App = () => {
 	return (
 		<div className="app">
 			<Header displayNotepad={displayNotepad} />
-			<Timer minutes={minutes} seconds={seconds} isPortrait={false} />
+			<Timer totalSeconds={totalSeconds} isPortrait={false} />
 			<div className="landscape-hint-and-stats">
 				<Hint isPortrait={false} />
 				<Stats isPortrait={false} />
 			</div>
-			<Plant minutesLeft={minutes} secondsLeft={seconds} />
+			<Plant totalSeconds={totalSeconds} />
 			<p className="water-plant-prompt">Water the plant</p>
-			<Timer minutes={minutes} seconds={seconds} isPortrait={true} />
+			<Timer totalSeconds={totalSeconds} isPortrait={true} />
 			<ConnectKitButton.Custom>
 				{({ isConnected, show }) => (
 					<MintButton isModal={false} onClick={isConnected ? displayMintModal : show} />

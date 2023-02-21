@@ -1,13 +1,14 @@
-import { formatTimer } from '../../utils/time.utils';
+import { getTimeUnits, formatTimer } from '../../utils/time.utils';
 import './Timer.scss';
 
 type TimerProps = {
-	minutes: number,
-	seconds: number,
+	totalSeconds: number,
 	isPortrait: boolean,
 };
 
-const Timer = ({ minutes, seconds, isPortrait }: TimerProps) => {
+const Timer = ({ totalSeconds, isPortrait }: TimerProps) => {
+	const { minutes, seconds } = getTimeUnits(totalSeconds);
+
     return (
         <div className={`timer-container timer-container--${isPortrait ? 'portrait' : 'landscape'}`}>
 			<p className={`countdown${minutes === 0 && seconds !== 0 ? ' countdown--red' : ''}`}>

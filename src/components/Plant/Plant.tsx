@@ -7,25 +7,24 @@ import PlantInterval15 from '../../assets/plant-15min.gif';
 import './Plant.scss';
 
 type PlantProps = {
-	minutesLeft: number,
-	secondsLeft: number,
+	totalSeconds: number,
 };
 
-const Plant = ({ minutesLeft, secondsLeft}: PlantProps) => {
+const Plant = ({ totalSeconds }: PlantProps) => {
 	/**
 	 * Gets the appropriate plant image based on the time that's left.
 	 * @returns The path to the appropriate image.
 	 */
 	const getPlantImage = (): string => {
-		if (minutesLeft === 0 && secondsLeft === 0) {
+		if (totalSeconds === 0) {
 			return PlantDead;
-		} else if (minutesLeft < 3) {
+		} else if (totalSeconds < 180) {
 			return PlantInterval3;
-		} else if (minutesLeft < 6) {
+		} else if (totalSeconds < 360) {
 			return PlantInterval6;
-		} else if (minutesLeft < 9) {
+		} else if (totalSeconds < 540) {
 			return PlantInterval9;
-		} else if (minutesLeft < 12) {
+		} else if (totalSeconds < 720) {
 			return PlantInterval12;
 		} else {
 			return PlantInterval15;
