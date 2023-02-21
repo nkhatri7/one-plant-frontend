@@ -11,6 +11,7 @@ import MintButton from './components/MintButton/MintButton';
 import Notepad from './components/Notepad/Notepad';
 import MintModal from './components/MintModal/MintModal';
 import MobileBg from './assets/mobile-bg.png';
+import TabletBg from './assets/tablet-bg.png';
 import DesktopBg from './assets/desktop-bg.png';
 import './App.scss';
 
@@ -80,6 +81,7 @@ const App = () => {
 			</main>
 			<div className="bg-container">
 				<img src={MobileBg} alt="Background" className="bg bg--mobile" />
+				<img src={TabletBg} alt="Background" className="bg bg--tablet" />
 				<img src={DesktopBg} alt="Background" className="bg bg--desktop" />
 			</div>
 			{isNotepadOpen && <Notepad closeNotepad={closeNotepad} />}

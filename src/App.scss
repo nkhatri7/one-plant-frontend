@@ -24,11 +24,25 @@
       overflow-y: hidden;
     .bg {
       width: 100%;
+      &--tablet {
+        display: none;
+      }
       &--desktop {
         display: none;
       }
+      @media screen and (orientation: portrait) and (min-width: 500px) {
+        &--mobile {
+          display: none;
+        }
+        &--tablet {
+          display: block;
+        }
+      }
       @media screen and (orientation: landscape) {
         &--mobile {
+          display: none;
+        }
+        &--tablet {
           display: none;
         }
         &--desktop {
