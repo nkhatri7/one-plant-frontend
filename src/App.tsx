@@ -10,6 +10,8 @@ import Stats from './components/Stats/Stats';
 import MintButton from './components/MintButton/MintButton';
 import Notepad from './components/Notepad/Notepad';
 import MintModal from './components/MintModal/MintModal';
+import MobileBg from './assets/mobile-bg.png';
+import DesktopBg from './assets/desktop-bg.png';
 import './App.scss';
 
 const App = () => {
@@ -54,26 +56,32 @@ const App = () => {
 	return (
 		<div className="app">
 			<Header displayNotepad={displayNotepad} />
-			<Timer totalSeconds={totalSeconds} isPortrait={false} />
-			<div className="landscape-hint-and-stats">
-				<Hint isPortrait={false} />
-				<Stats isPortrait={false} />
+			<main>
+				<Timer totalSeconds={totalSeconds} isPortrait={false} />
+				<div className="landscape-hint-and-stats">
+					<Hint isPortrait={false} />
+					<Stats isPortrait={false} />
+				</div>
+				<Plant totalSeconds={totalSeconds} />
+				<p className="water-plant-prompt">{totalSeconds === 0 ? 'Game Over' : 'Water the plant'}</p>
+				<Timer totalSeconds={totalSeconds} isPortrait={true} />
+				<ConnectKitButton.Custom>
+					{({ isConnected, show }) => (
+						<MintButton 
+							isModal={false} 
+							disabled={totalSeconds === 0} 
+							onClick={isConnected ? displayMintModal : show} 
+						/>
+					)}
+				</ConnectKitButton.Custom>
+				<Hint isPortrait={true} />
+				<TreasureList />
+				<Stats isPortrait={true} />
+			</main>
+			<div className="bg-container">
+				<img src={MobileBg} alt="Background" className="bg bg--mobile" />
+				<img src={DesktopBg} alt="Background" className="bg bg--desktop" />
 			</div>
-			<Plant totalSeconds={totalSeconds} />
-			<p className="water-plant-prompt">{totalSeconds === 0 ? 'Game Over' : 'Water the plant'}</p>
-			<Timer totalSeconds={totalSeconds} isPortrait={true} />
-			<ConnectKitButton.Custom>
-				{({ isConnected, show }) => (
-					<MintButton 
-						isModal={false} 
-						disabled={totalSeconds === 0} 
-						onClick={isConnected ? displayMintModal : show} 
-					/>
-				)}
-			</ConnectKitButton.Custom>
-			<Hint isPortrait={true} />
-			<TreasureList />
-			<Stats isPortrait={true} />
 			{isNotepadOpen && <Notepad closeNotepad={closeNotepad} />}
 			{isMintModalOpen && <MintModal closeModal={closeMintModal} />}
 		</div>
