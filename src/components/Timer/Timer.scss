@@ -1,7 +1,7 @@
 @keyframes time-opacity {
     0% { opacity: 1; }
-    40% { opacity: 0.25; }
-    60% { opacity: 0.25; }
+    30% { opacity: 0.75; }
+    60% { opacity: 0.05; }
     61% { opacity: 1; }
     100% { opacity: 1; }
 }
@@ -30,7 +30,7 @@
         color: #FFFFFF;
         &--red {
             color: var(--red-text);
-            animation: time-opacity 1s infinite;
+            animation: time-opacity 1s ease-in infinite;
         }
     }
     > .current-block {
