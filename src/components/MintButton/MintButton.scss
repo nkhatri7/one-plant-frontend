@@ -9,7 +9,7 @@
 		background: url('../../assets/mint-unpressed.png') no-repeat center center;
 		background-size: contain;
 		margin: 0 auto;
-		&--pressed {
+		&:active {
 			background-image: url('../../assets/mint-pressed.png');
 		}
 		&--modal {
