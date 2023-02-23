@@ -28,6 +28,7 @@
         font-family: '04B 30';
         font-size: 40px;
         color: #FFFFFF;
+        animation: time-opacity 1s ease-in infinite;
         &--red {
             color: var(--red-text);
             animation: time-opacity 1s ease-in infinite;
