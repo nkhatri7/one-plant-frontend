@@ -87,7 +87,7 @@ const MintForm = ({ closeModal }: MintFormProps) => {
 	 * @returns `true` if the custom price is valid and `false` if it is not.
 	 */
 	const validateCustomPrice = (): boolean => {
-		return customPrice < 0.001;
+		return customPrice >= 0.001;
 	};
 
 	return (
