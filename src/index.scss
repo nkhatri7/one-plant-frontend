@@ -17,6 +17,11 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Press Start 2P', sans-serif;
   font-synthesis: none;
@@ -28,4 +33,13 @@ body {
   @media screen and (orientation: landscape) {
     background-color: #370808;
   }
+
+  // HIDE SCROLLBAR
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

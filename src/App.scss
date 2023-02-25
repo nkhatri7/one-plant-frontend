@@ -86,7 +86,10 @@
       justify-content: center;
       animation: modal-smooth-open 0.7s ease; 
       // CUSTOM SCROLLBAR
+      -ms-overflow-style: scrollbar;  /* IE and Edge */
+      scrollbar-width: auto;  /* Firefox */
       ::-webkit-scrollbar {
+        display: block;
         width: 13px;
       }
       ::-webkit-scrollbar-track {
@@ -126,9 +129,9 @@
 
   .water-plant-prompt {
     font-family: '04B 30';
-    font-size: 12px;
+    font-size: 14px;
     color: #60ECFF;
-    margin-top: 13%;
+    margin-top: 12%;
     text-align: center;
     text-transform: uppercase;
     text-shadow: 4px 4px 0px #000000;
