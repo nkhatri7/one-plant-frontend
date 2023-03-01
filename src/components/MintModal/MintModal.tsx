@@ -4,7 +4,7 @@ import ScrollBg from '../../assets/scroll.png';
 import './MintModal.scss';
 
 type MintModalProps = {
-	closeModal: React.EventHandler<any>,
+	closeModal: () => void,
 };
 
 const MintModal = ({ closeModal }: MintModalProps) => {
