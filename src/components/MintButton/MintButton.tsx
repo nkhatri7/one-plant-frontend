@@ -24,7 +24,7 @@ const MintButton = ({ isModal, disabled, onClick }: MintButtonProps) => {
 			<button 
 					className={`mint-btn${isModal ? ' mint-btn--modal' : ''}`} 
 					aria-label="Mint" 
-					type={isModal ? 'submit' : 'button'}
+					type='button'
 					onClick={handleMintBtnClick} 
 					disabled={disabled}
 					ref={mintBtn}

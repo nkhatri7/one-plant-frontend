@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ConnectKitButton } from 'connectkit';
 import useCountdown from './hooks/useCountdown';
 import Header from './components/Header/Header';
 import Plant from './components/Plant/Plant';
@@ -66,15 +65,11 @@ const App = () => {
 				<Plant totalSeconds={totalSeconds} />
 				<p className="water-plant-prompt">{totalSeconds === 0 ? 'Game Over' : 'Water the plant'}</p>
 				<Timer totalSeconds={totalSeconds} isPortrait={true} />
-				<ConnectKitButton.Custom>
-					{({ isConnected, show }) => (
-						<MintButton 
-							isModal={false} 
-							disabled={totalSeconds === 0} 
-							onClick={isConnected ? displayMintModal : show} 
-						/>
-					)}
-				</ConnectKitButton.Custom>
+				<MintButton 
+					isModal={false} 
+					disabled={totalSeconds === 0} 
+					onClick={displayMintModal} 
+				/>
 				<Hint isPortrait={true} />
 				<TreasureList />
 				<Stats isPortrait={true} />

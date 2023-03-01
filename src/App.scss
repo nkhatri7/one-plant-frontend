@@ -91,10 +91,6 @@
       ::-webkit-scrollbar {
         display: block;
         width: 13px;
-        // FOR MOBILE
-        @media screen and (max-width: 768px) {
-          -webkit-appearance: scrollbarthumb-vertical;
-        }
       }
       ::-webkit-scrollbar-track {
           background: #322D28;

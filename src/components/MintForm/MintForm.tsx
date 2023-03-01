@@ -1,9 +1,10 @@
 import { useState, useRef, ChangeEvent, FormEvent } from 'react';
+import { ConnectKitButton } from 'connectkit';
 import MintButton from '../MintButton/MintButton';
 import './MintForm.scss';
 
 type MintFormProps = {
-	closeModal: React.EventHandler<any>,
+	closeModal: () => void,
 };
 
 const MintForm = ({ closeModal }: MintFormProps) => {
@@ -54,17 +55,15 @@ const MintForm = ({ closeModal }: MintFormProps) => {
 	/**
 	 * Handles input validation and requests the mint function on the smart
 	 * contract.
-	 * @param e A form submission event.
 	 */
-	const handleMintRequest = (e: FormEvent) => {
-		e.preventDefault();
+	const handleMintRequest = () => {
 		// Check if custom pricing option is selected and if the price is more
 		// than the minimum for custom pricing
 		if (selectedOption === customValueEl && !validateCustomPrice()) {
 			return;
 		}
 		const price = getMintPrice();
-		closeModal(e);
+		closeModal();
 	};
 
 	/**
@@ -91,7 +90,7 @@ const MintForm = ({ closeModal }: MintFormProps) => {
 	};
 
 	return (
-		<form onSubmit={handleMintRequest} className="mint-form">
+		<form className="mint-form">
 			<div className="mint-form-row">
 				<div 
 						className="mint-option mint-option--selected" 
@@ -119,7 +118,11 @@ const MintForm = ({ closeModal }: MintFormProps) => {
 				</div>
 			</div>
 			<div className="mint-form-row">
-				<MintButton isModal={true} disabled={false} />
+				<ConnectKitButton.Custom>
+					{({ isConnected, show }) => (
+						<MintButton isModal={true} disabled={false} onClick={isConnected ? handleMintRequest : show} />
+					)}
+				</ConnectKitButton.Custom>
 			</div>
 		</form>
 	);
